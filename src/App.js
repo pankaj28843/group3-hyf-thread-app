@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Header from './component/Header';
-import Calendar from "./component/Calendar";
+import Header from './components/header/Header';
+import Calendar from "./components/calendar/Calendar";
+import MapComponent from "./components/map-component/MapComponent"
 import logo from './logo.svg';
 import './App.css';
-import MapComponent from "./components/MapComponent"
 
 class App extends Component {
   render() {
