@@ -1,18 +1,25 @@
 import React from "react";
 import "./MapComponent.css";
-import { withGoogleMap, GoogleMap, Marker } from "react-google-maps";
+import {
+  withScriptjs,
+  withGoogleMap,
+  GoogleMap,
+  Marker
+} from "react-google-maps";
 
 class MapComponent extends React.Component {
   render() {
-    const GoogleMapComponent = withGoogleMap(props => (
-      <GoogleMap
-        defaultCenter={{ lat: 55.676098, lng: 12.568337 }}
-        defaultZoom={12}
-      >
-        <Marker position={{ lat: 55.676098, lng: 12.568337 }} />
-        <Marker position={{ lat: 55.696098, lng: 12.578337 }} />
-      </GoogleMap>
-    ));
+    const GoogleMapComponent = withScriptjs(
+      withGoogleMap(props => (
+        <GoogleMap
+          defaultCenter={{ lat: 55.676098, lng: 12.568337 }}
+          defaultZoom={12}
+        >
+          <Marker position={{ lat: 55.676098, lng: 12.568337 }} />
+          <Marker position={{ lat: 55.696098, lng: 12.578337 }} />
+        </GoogleMap>
+      ))
+    );
 
     return (
       <div className="grid">
@@ -37,6 +44,8 @@ class MapComponent extends React.Component {
           </div>
         </div>
         <GoogleMapComponent
+          googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnZHCNVuYH8lZSMZtuHzJ4677eUi6AE8w&libraries=geometry,drawing,places"
+          loadingElement={<div style={{ height: `100%` }} />}
           containerElement={<div style={{ height: "100%", width: "100%" }} />}
           mapElement={<div style={{ height: `100%` }} />}
         />
