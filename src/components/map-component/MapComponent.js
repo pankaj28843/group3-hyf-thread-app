@@ -17,7 +17,7 @@ class MapComponent extends React.Component {
               ? this.props.mapCenter
               : { lat: 55.676098, lng: 12.568337 }
           }
-          defaultZoom={13}
+          defaultZoom={this.props.Zoom ? this.props.Zoom : 13}
         >
           {this.props.setMarker && this.props.mapCenter ? (
             <Marker position={this.props.mapCenter} />
