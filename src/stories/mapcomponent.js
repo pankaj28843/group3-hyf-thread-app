@@ -7,7 +7,7 @@ storiesOf("MapComponent", module)
   .add("Default setting", () => <MapComponent />)
   .add("set map center to HYF", () => (
     <MapComponent
-      mapCenter={{ lat: 55.6608889, lng: 12.5397036 }}
+      mapCenter={{ lat: 55.661629, lng: 12.540446 }}
       setMarker
       Zoom={18}
     />
