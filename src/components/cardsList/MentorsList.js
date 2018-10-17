@@ -4,14 +4,12 @@ import Header from "../Header";
 class Mentors extends React.Component {
   render() {
     return (
-      <div>
-        <header>
-          <Header />
-        </header>
+      <>
+        <Header />
         <main>
           <li>Mentors</li>
         </main>
-      </div>
+      </>
     );
   }
 }

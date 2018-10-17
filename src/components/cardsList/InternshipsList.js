@@ -8,7 +8,7 @@ class InternshipsList extends Component {
     super(props);
     this.state = {
       isLoading: true,
-      data: []
+      internshipsData: []
     };
   }
 
@@ -21,30 +21,55 @@ class InternshipsList extends Component {
       "https://raw.githubusercontent.com/paredesrichard/commandline/master/internships.json"
     )
       .then(response => response.json())
-      .then(parsedJSON => console.log("thing" + parsedJSON.results))
+      .then(parsedJSON =>
+        parsedJSON.map(internship => ({
+          id: `${internship.id}`,
+          title: `${internship.internship_title}`,
+          category: `${internship.internship_category}`,
+          department: `${internship.department}`,
+          description: `${internship.internship_description}`
+        }))
+      )
+      .then(internshipsData =>
+        this.setState({
+          internshipsData,
+          isLoading: false
+        })
+      )
       .catch(error => console.log(error));
   }
 
   render() {
-    JSON.stringify(this.state.InternshipData);
+    // JSON.stringify(this.state.InternshipData);
+    const { isLoading, internshipsData } = this.state;
     return (
       <>
         <Header />
-        <div className="cards-list-container">
+        <div
+          className={`cards-list-container ${isLoading ? "is-loading" : ""}`}
+        >
           <div className="cards-list">
-            <h1>intefasfa</h1>
-            {/* {this.state.InternshipData.map(internship => {
-            return (
-              <InternshipCard
-                title={internship.internship_title}
-                id={internship.id}
-                key={internship.id}
-                category={internship.internship_category}
-                organisation_name={internship.organisation_name}
-                organisation_description={internship.organisation_description}
-              />
-            );
-          })} */}
+            {!isLoading && internshipsData.length > 0
+              ? internshipsData.map(internship => {
+                  const {
+                    id,
+                    title,
+                    category,
+                    department,
+                    description
+                  } = internship;
+                  return (
+                    <InternshipCard
+                      title={title}
+                      id={id}
+                      key={id}
+                      department={department}
+                      category={category}
+                      organisation_description={description}
+                    />
+                  );
+                })
+              : null}
           </div>
           <div className="loader">
             <div className="icon" />

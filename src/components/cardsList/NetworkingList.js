@@ -4,15 +4,12 @@ import Header from "../Header";
 class Networking extends React.Component {
   render() {
     return (
-      <div>
-        <header>
-          <Header />
-        </header>
-
+      <>
+        <Header />
         <main>
           <li>Networking API should stay here</li>
         </main>
-      </div>
+      </>
     );
   }
 }

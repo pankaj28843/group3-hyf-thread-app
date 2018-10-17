@@ -4,11 +4,12 @@ import Header from "../Header";
 class Events extends React.Component {
   render() {
     return (
-      <div>
+      <>
+        <Header />
         <main>
           <li>Events</li>
         </main>
-      </div>
+      </>
     );
   }
 }

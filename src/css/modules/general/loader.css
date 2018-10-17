@@ -15,14 +15,14 @@
     position: absolute;
     left: 0;
     top: 0;
-    background: url("assets/img/ico_loader.svg") no-repeat 0 0;
+    background: url("./assets/img/ico_loader.svg") no-repeat 0 0;
     background-size: 248px 248px;
   }
 }
 
 .is-loading {
   .loader {
-    opacity: 0;
+    opacity: 1;
     visibility: visible;
     transition: opacity 0.3s linear, visibility 0.3s linear;
     z-index: 100;
