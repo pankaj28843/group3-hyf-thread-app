@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import InternshipCard from "../cards/InternshipCard";
-import InternshipData from "../../database/InternshipData.json";
+import Header from "../Header";
+// import InternshipData from "../../database/InternshipData.json";
 
 class InternshipsList extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isLoading: true,
-      InternshipData
+      data: []
     };
   }
 
@@ -27,9 +28,12 @@ class InternshipsList extends Component {
   render() {
     JSON.stringify(this.state.InternshipData);
     return (
-      <div className="internship-list-container">
-        <div className="internship-list">
-          {this.state.InternshipData.map(internship => {
+      <>
+        <Header />
+        <div className="cards-list-container">
+          <div className="cards-list">
+            <h1>intefasfa</h1>
+            {/* {this.state.InternshipData.map(internship => {
             return (
               <InternshipCard
                 title={internship.internship_title}
@@ -40,9 +44,13 @@ class InternshipsList extends Component {
                 organisation_description={internship.organisation_description}
               />
             );
-          })}
+          })} */}
+          </div>
+          <div className="loader">
+            <div className="icon" />
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 }

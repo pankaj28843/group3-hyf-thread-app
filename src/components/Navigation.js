@@ -3,8 +3,8 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "../App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import Internships from "./cardsList/EventsList";
-import Events from "./cardsList/InternshipsList";
+import Events from "./cardsList/EventsList";
+import Internships from "./cardsList/InternshipsList";
 import Mentors from "./cardsList/MentorsList";
 import Networking from "./cardsList/NetworkingList";
 

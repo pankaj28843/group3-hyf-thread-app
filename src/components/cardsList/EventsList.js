@@ -5,9 +5,6 @@ class Events extends React.Component {
   render() {
     return (
       <div>
-        <header>
-          <Header />
-        </header>
         <main>
           <li>Events</li>
         </main>
