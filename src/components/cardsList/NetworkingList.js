@@ -1,19 +1,20 @@
 import React from "react";
-import Header from "../header/Header"
+import Header from "../Header";
 
-class Internships extends React.Component {
+class Networking extends React.Component {
   render() {
     return (
       <div>
         <header>
           <Header />
         </header>
+
         <main>
-          <li>Internships</li>
+          <li>Networking API should stay here</li>
         </main>
       </div>
     );
   }
 }
 
-export default Internships;
+export default Networking;

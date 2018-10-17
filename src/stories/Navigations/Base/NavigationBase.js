@@ -1,8 +1,8 @@
 import React from "react";
 
 import { storiesOf } from "@storybook/react";
-import InternshipsListBase from "./Base/InternshipsListBase";
+import NavigationBase from "./NavigationBase";
 
 storiesOf("Pages", module).add("Internships Page Horizental", () => (
-  <InternshipsListBase />
+  <InternshipsList />
 ));

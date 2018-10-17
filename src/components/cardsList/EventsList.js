@@ -1,20 +1,19 @@
 import React from "react";
-import Header from "../header/Header"
+import Header from "../Header";
 
-class Networking extends React.Component {
+class Events extends React.Component {
   render() {
     return (
       <div>
         <header>
           <Header />
         </header>
-
         <main>
-          <li>Networking API should stay here</li>
+          <li>Events</li>
         </main>
       </div>
     );
   }
 }
 
-export default Networking;
+export default Events;
