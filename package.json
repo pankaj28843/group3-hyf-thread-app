@@ -20,8 +20,8 @@
     "react-scripts": "2.0.4"
   },
   "scripts": {
-    "start": "sh -ac '. ./.env.development;' && react-app-rewired start --scripts-version react-scripts",
-    "build": "react-app-rewired build --scripts-version react-scripts",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "preview": "npm run build && serve -s build",
@@ -31,19 +31,13 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
   "devDependencies": {
-    "@storybook/addon-actions": "^3.4.11",
-    "@storybook/addon-links": "^3.4.11",
-    "@storybook/addons": "^3.4.11",
-    "@storybook/react": "^3.4.11",
-    "babel-core": "^6.26.3",
-    "babel-runtime": "^6.26.0",
+    "@babel/core": "^7.1.2",
+    "@storybook/addon-actions": "^4.0.0-alpha.25",
+    "@storybook/addon-links": "^4.0.0-alpha.25",
+    "@storybook/addons": "^4.0.0-alpha.25",
+    "@storybook/react": "^4.0.0-alpha.25",
+    "babel-loader": "^8.0.4",
     "react-app-rewire-postcss": "^3.0.2"
   }
 }
