@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+// import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import Navigation from "./components/viewsList/Navigation";
+import Navigation from "./components/Navigation";
 
 class App extends Component {
   render() {

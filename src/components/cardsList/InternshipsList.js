@@ -6,8 +6,22 @@ class InternshipsList extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      isLoading: true,
       InternshipData
     };
+  }
+
+  componentDidMount = () => {
+    this.fetchData();
+  };
+
+  fetchData() {
+    fetch(
+      "https://raw.githubusercontent.com/paredesrichard/commandline/master/internships.json"
+    )
+      .then(response => response.json())
+      .then(parsedJSON => console.log("thing" + parsedJSON.results))
+      .catch(error => console.log(error));
   }
 
   render() {

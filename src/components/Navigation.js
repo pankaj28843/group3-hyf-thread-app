@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import "../../App.css";
+import "../App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import Internships from "./cardsList/EventsList";
@@ -18,7 +18,7 @@ class Router extends Component {
           <Route exact path="/Events" component={Events} />
           <Route exact path="/Mentors" component={Mentors} />
           <Route exact path="/Networking" component={Networking} />
-          <Route exact component={error} />
+          {/* <Route exact component={error} /> */}
         </Switch>
       </BrowserRouter>
     );
