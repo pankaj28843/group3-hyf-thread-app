@@ -1,37 +1,33 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+
 class Header extends Component {
   render() {
     return (
-      <header className="masthead">
-        <h1 className="site-branding">
-          <i className="fab fa-bandcamp" />
-          Jobify
-        </h1>
-        <nav className="header-menu">
-          <ul className="nav-container">
+      <div className="masthead">
+        <div className="header-menu">
+        <nav>
+          <ul>
             <li className="nav-item">
-              <a href="#link" alt="find job">
-                find job
-              </a>
-            </li>
-            <li className="nav-item">
-              <a href="#link" alt="resume page">
-                my resume
-              </a>
-            </li>
-            <li className="nav-item my-page">
-              <a href="#link" alt="personal page">
-                my page
-              </a>
-            </li>
-            <li>
-              <a href="#link" alt="personal page">
-                <i class="fas fa-user" />
-              </a>
-            </li>
+          <Link to="/" className="nav-link menuLink"> Home </Link>
+          </li>
+            <li className="nav-item Interships">
+          <Link to="/Internships" className="menuLink nav-link"> Internships </Link>
+          </li>
+            <li className="nav item Events">
+          <Link to="/Events" className="menuLink nav-link"> Events </Link>
+          </li>
+            <li className="nav item Mentors">
+          <Link to="/Mentors" className="menuLink nav-link"> Mentors </Link>
+          </li>
+          <li className= "nav item Networking">
+          <Link to="/Networking" className=" nav-link"> Networking </Link>
+          </li>
           </ul>
+           
         </nav>
-      </header>
+      </div> 
+      </div> 
     );
   }
 }

@@ -1,22 +1,24 @@
-import React, { Component } from 'react';
-import Header from './components/header/Header';
-import Calendar from "./components/calendar/Calendar";
-import MapComponent from "./components/map-component/MapComponent"
-import SideBar from "./components/sidebar/sidebar";
+import React, { Component } from "react";
+import {Route, Switch } from "react-router-dom";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-import './App.css';
-const myText=" Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur illo quo tempora explicabo omnis mollitia ipsam, pariatur totam nam! Quibusdam error unde mollitia optio quo porro atque, obcaecati ad?Necessitatibus earum inventore mollitia doloremque, perferendisquidem, illum distinctio est quos rem fugit expedita unde amet nihil velit perspiciatis. Non, nihil?";
+import Internships from "./components/internships/Internships";
+import Events from "./components/events/Events";
+import Mentors from "./components/mentors/Mentors";
+import Networking from "./components/networking/Networking";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-       <Header />
-        <Calendar />
-      <div>
-          <MapComponent />
-        <SideBar text={myText}/>
-        </div>
+      <div id="app">
+        <Switch>
+          <Route exact path="/" component={Events} />
+          <Route exact path="/Internships" component={Internships} />
+          <Route exact path="/Events" component={Events} />
+          <Route exact path="/Mentors" component={Mentors}/>
+          <Route exact path="/Networking" component={Networking}/>
+        </Switch>
       </div>
     );
   }

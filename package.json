@@ -3,13 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "browserslist": [
-    "> 4%",
-    "Chrome >= 64",
-    "Edge > 13",
-    "Firefox >= 59",
-    "IE 11",
-    "last 4 versions",
-    "Safari >= 9"
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
   ],
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.4",
