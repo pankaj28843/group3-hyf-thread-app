@@ -24,10 +24,16 @@ header {
         padding: 0;
 
         li {
-          color: white;
-
           :hover {
-            background-color: white;
+            background-color: grey;
+          }
+
+          a {
+            color: white;
+            padding: 20px;
+            text-decoration: none;
+            font-size: 1.2em;
+            outline: none !important;
           }
         }
       }
