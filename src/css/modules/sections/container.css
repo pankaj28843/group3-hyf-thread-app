@@ -4,7 +4,7 @@
 .cards-list-container {
   padding: 20px 0 100px 0;
   margin: 0 auto;
-  max-width: 80%;
+  max-width: 100%;
 }
 
 .cards-list {
@@ -20,7 +20,7 @@
   flex-direction: column;
   justify-content: space-between;
   background-color: white;
-  color: yellowgreen;
+  color: #a1a1a1;
   padding: 0;
   text-align: left;
   height: 100%;
@@ -32,6 +32,11 @@
   border-top-left-radius: 8px;
   border-radius: 8px;
   overflow: hidden;
+
+  img {
+    max-width: 100%;
+    padding: 2rem;
+  }
 }
 
 .internship-item:not(:first-child) {
@@ -111,9 +116,9 @@
 }
 
 .internship-item .internship-title {
-  font-size: 1.4rem;
-  line-height: 0.7rem;
+  font-size: 2rem;
   color: #274fa5;
+  text-transform: uppercase;
 }
 
 .internship-item .internship-company {
