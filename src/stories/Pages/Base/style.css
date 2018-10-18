@@ -1,13 +1,13 @@
 /* ----------------------------
-      card LIST CONTAINER
+      internship LIST CONTAINER
 ----------------------------*/
-.card-list-container {
+.cards-list-container {
   padding: 20px 0 100px 0;
   margin: 0 auto;
   max-width: 80%;
 }
 
-.card-list {
+.cards-list {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -15,7 +15,7 @@
   margin: 20px;
 }
 
-.card-item {
+.internship-item {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -34,16 +34,16 @@
   overflow: hidden;
 }
 
-.card-item:not(:first-child) {
+.internship-item:not(:first-child) {
   margin-top: 2em;
 }
 
-.card-item:hover {
+.internship-item:hover {
   box-shadow: 0px 15px 25px 0px rgba(0, 0, 0, 0.2);
   transform: translateY(-3px);
 }
 
-.card-branding {
+.internship-branding {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
@@ -54,7 +54,7 @@
   overflow: hidden;
 }
 
-.card-branding .card-branding-logo {
+.internship-branding .internship-branding-logo {
   display: flex;
   justify-content: flex-start;
   align-content: center;
@@ -71,7 +71,7 @@
   padding-left: 2em;
 }
 
-.card-branding .card-branding-logo img {
+.internship-branding .internship-branding-logo img {
   width: auto;
   height: 70%;
   opacity: 1;
@@ -79,13 +79,13 @@
   filter: drop-shadow(0px 5px 15px rgba(179, 207, 248, 0.76));
 }
 
-.card-branding .card-item-image {
+.internship-branding .internship-item-image {
   width: 100%;
   height: auto;
   overflow: hidden;
 }
 
-.card-branding .card-item-image img {
+.internship-branding .internship-item-image img {
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.2));
   overflow: hidden;
   width: 100%;
@@ -95,40 +95,40 @@
   top: 20%;
 }
 
-.card-item-info {
+.internship-item-info {
   padding: 20px 40px 10px 30px;
   border-top: none;
 }
 
-.card-item-image {
+.internship-item-image {
   width: 20%;
 }
 
-.card-item-image img {
+.internship-item-image img {
   padding: 0;
   margin: 0;
   height: 100%;
 }
 
-.card-item .card-title {
+.internship-item .internship-title {
   font-size: 1.4rem;
   line-height: 0.7rem;
   color: #274fa5;
 }
 
-.card-item .card-company {
+.internship-item .internship-company {
   font-size: 0.9rem;
   color: rgba(2, 33, 66, 0.5);
 }
 
-.card-item .card-description {
+.internship-item .internship-description {
   font-family: "Raleway", sans-serif;
   font-size: 0.9rem;
   color: rgba(1, 39, 80, 0.8);
   line-height: 1.4rem;
 }
 
-.card-item .card-dates {
+.internship-item .internship-dates {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -139,7 +139,7 @@
   padding-bottom: 10px;
 }
 
-.card-item .card-dates p {
+.internship-item .internship-dates p {
   font-family: "Raleway", sans-seriaf;
   font-size: 0.7rem;
   color: rgba(255, 255, 255, 0.541);
@@ -153,11 +153,11 @@
   transition: all 0.3s ease-in-out;
 }
 
-.card-item .card-dates p.card-deadline {
+.internship-item .internship-dates p.internship-deadline {
   color: #ff4151bd;
 }
 
-.card-links {
+.internship-links {
   display: flex;
   justify-content: space-evenly;
   align-content: center;
@@ -167,11 +167,11 @@
   border-bottom-left-radius: 9px;
 }
 
-.card-item .card-dates p:hover {
+.internship-item .internship-dates p:hover {
   transform: scale(1.2);
 }
 
-.card-links a {
+.internship-links a {
   padding: 15px 0;
   width: 100%;
   text-decoration: none;
@@ -183,16 +183,16 @@
   transition: all 0.5s ease-in-out;
 }
 
-.card-links .card-read-more {
+.internship-links .internship-read-more {
   border-right: 1px solid #b6353f34;
 }
 
-.card-links .card-read-more:hover {
+.internship-links .internship-read-more:hover {
   background-color: #ff6347;
   color: #fff;
 }
 
-.card-links .card-apply:hover {
+.internship-links .internship-apply:hover {
   background-color: #ff6347;
   color: #fff;
 }

@@ -1,52 +1,80 @@
 import React, { Component } from "react";
-import InternshipData from "../../../database/InternshipData.json";
-import "./style.css";
-class InternshipItem extends Component {
-  render() {
-    //console.log(`this is item ${this.props.internship_title}`);
-    return (
-      <div className="card-item">
-        <div className="card-item-info">
-          <h1 className="card-title">{this.props.title}</h1>
-          <h2 className="card-category">{this.props.category}</h2>
-          <h2 className="card-organisation">{this.props.organisation_name}</h2>
-          <p className="card-description">
-            {this.props.organisation_description}
-          </p>
-        </div>
-      </div>
-    );
-  }
-}
+import InternshipCard from "../../Cards/InternshipCard";
+import Header from "../../Headers/Header";
 
 class InternshipsList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      InternshipData,
-      nextId: 4
+      isLoading: true,
+      internshipsData: []
     };
   }
 
+  componentDidMount = () => {
+    this.fetchData();
+  };
+
+  fetchData() {
+    fetch(
+      "https://raw.githubusercontent.com/paredesrichard/commandline/master/internships.json"
+    )
+      .then(response => response.json())
+      .then(parsedJSON =>
+        parsedJSON.map(internship => ({
+          id: `${internship.id}`,
+          title: `${internship.internship_title}`,
+          category: `${internship.internship_category}`,
+          department: `${internship.department}`,
+          description: `${internship.internship_description}`
+        }))
+      )
+      .then(internshipsData =>
+        this.setState({
+          internshipsData,
+          isLoading: false
+        })
+      )
+      .catch(error => console.log(error));
+  }
+
   render() {
-    JSON.stringify(this.state.InternshipData);
+    // JSON.stringify(this.state.InternshipData);
+    const { isLoading, internshipsData } = this.state;
     return (
-      <div className="card-list-container">
-        <div className="card-list">
-          {this.state.InternshipData.map(internship => {
-            return (
-              <InternshipItem
-                title={internship.internship_title}
-                id={internship.id}
-                key={internship.id}
-                category={internship.internship_category}
-                organisation_name={internship.organisation_name}
-                organisation_description={internship.organisation_description}
-              />
-            );
-          })}
+      <>
+        <Header />
+        <div
+          className={`cards-list-container ${isLoading ? "is-loading" : ""}`}
+        >
+          <div className="cards-list">
+            {!isLoading && internshipsData.length > 0
+              ? internshipsData.map(internship => {
+                  const {
+                    id,
+                    title,
+                    category,
+                    department,
+                    description
+                  } = internship;
+                  return (
+                    <InternshipCard
+                      title={title}
+                      id={id}
+                      key={id}
+                      department={department}
+                      category={category}
+                      organisation_description={description}
+                    />
+                  );
+                })
+              : null}
+          </div>
+          <div className="loader">
+            <div className="icon" />
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 }
