@@ -64,7 +64,7 @@ class InternshipsList extends Component {
     return (
       <>
         <Header />
-        <div
+        <section
           className={`cards-list-container ${isLoading ? "is-loading" : ""}`}
         >
           <div className="cards-list">
@@ -132,7 +132,7 @@ class InternshipsList extends Component {
           <div className="loader">
             <div className="icon" />
           </div>
-        </div>
+        </section>
       </>
     );
   }
