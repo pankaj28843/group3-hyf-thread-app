@@ -1,13 +1,14 @@
 import express from "express";
 import path from 'path';
+import bodyParser from 'body-parser';
+
+import apiRoutes from './routes';
 
 const app = express();
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
-app.get("/api/hello", (req, res) => {
-  res.send({
-    hello: "world"
-  });
-});
+app.use('/api', apiRoutes);
 
 // Serve the static files from the React app
 app.use(express.static(path.resolve(__dirname, '..', 'client')));
