@@ -82,7 +82,14 @@
     "webpack-node-externals": "^1.7.2"
   },
   "scripts": {
-    "start": "webpack-dev-server --config webpack.client.config.js --mode development --devtool inline-source-map --hot",
+    "start": "node dist/server/server.js",
+    "build-client": "webpack --config webpack.client.config.js --mode production",
+    "build-server": "webpack --config webpack.server.config.js --mode production",
+    "build": "npm run build-client && npm run build-server",
+    "client": "webpack-dev-server --config webpack.client.config.js --mode development --devtool inline-source-map --hot",
+    "server": "nodemon src/server/index.js --exec babel-node",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "npm run build",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public"
   },
